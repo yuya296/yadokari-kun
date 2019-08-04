@@ -6,16 +6,17 @@ module.exports = class SkillSearchShop {
         this.required_parameter = {
             genre: {
                 message_to_confirm: {
-                    type: "template",
-                    altText: "何を食べたい気分？",
-                    template: {
-                        type: "buttons",
-                        text: "今の気分は？",
-                        actions: [
-                            {type: "message", label: "甘いもの", text: "かき氷"},
-                            {type: "message", label: "しょっぱいもの", text: "ホットドッグ"}
-                        ]
-                    }
+                    type: "text",
+                    text: "模擬店を検索するね！何が食べたい気分？"
+                    // altText: "何を食べたい気分？",
+                    // template: {
+                    //     type: "buttons",
+                    //     text: "今の気分は？",
+                    //     actions: [
+                    //         {type: "message", label: "甘いもの", text: "かき氷"},
+                    //         {type: "message", label: "しょっぱいもの", text: "ホットドッグ"}
+                    //     ]
+                    // }
                 },
                 parser: async (value, bot, event, context) => {
                     console.log('called parser: ' + value);
