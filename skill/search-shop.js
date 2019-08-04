@@ -19,19 +19,34 @@ module.exports = class SkillSearchShop {
                         ]
                     }
                 },
+                // parser: async (value, bot, event, context) => {
+                //     console.log('called parser: ' + value);
+                //     if (["軽食", "ごはん", "飲み物", "スイーツ"].includes(value)) {
+                //         return value;
+                //     }
+                //     return new Error();
+                // },
+                // reaction: async (error, value, bot, event, context) => {
+                //     console.log('called reaction' + value);
+                //     if (error) return;
+                //     bot.queue({
+                //         type: "text",
+                //         text: `わかった！${value}が買えるお店を探すね！`
+                //     });
+                // },
                 parser: async (value, bot, event, context) => {
-                    console.log('called parser: ' + value);
                     if (["軽食", "ごはん", "飲み物", "スイーツ"].includes(value)) {
                         return value;
                     }
-                    return new Error();
+
+                    throw new Error();
                 },
                 reaction: async (error, value, bot, event, context) => {
-                    console.log('called reaction' + value);
                     if (error) return;
+
                     bot.queue({
                         type: "text",
-                        text: `わかった！${value}が買えるお店を探すね！`
+                        text: `わかった！！${value}が買えるお店を探すね。`
                     });
                 }
             }
