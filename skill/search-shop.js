@@ -68,26 +68,59 @@ module.exports = class SkillSearchShop {
                 "type": "carousel",
                 "columns": [
                     {
-                      "title": "おみせ1",
-                      "text": "おみせ1の説明だよ！おみせ1の説明だよ！おみせ1の説明だよ！おみせ1の説明だよ！おみせ1の説明だよ！おみせ1の説明だよ！おみせ1の説明だよ！おみせ1の説明だよ！おみせ1の説明だよ！おみせ1の説明だよ！おみせ1の説明だよ！",
+                      "imageBackgroundColor": "#FFFFFF",
+                      "title": "this is menu",
+                      "text": "description",
+                      "defaultAction": {
+                          "type": "uri",
+                          "label": "View detail",
+                          "uri": "http://example.com/page/123"
+                      },
                       "actions": [
                           {
+                              "type": "postback",
+                              "label": "Buy",
+                              "data": "action=buy&itemid=111"
+                          },
+                          {
+                              "type": "postback",
+                              "label": "Add to cart",
+                              "data": "action=add&itemid=111"
+                          },
+                          {
                               "type": "uri",
-                              "label": "詳しく見る",
+                              "label": "View detail",
                               "uri": "http://example.com/page/111"
                           }
                       ]
                     },
                     {
-                      "title": "おみせ2",
-                      "text": "おみせ2の説明だよ！おみせ2の説明だよ！おみせ2の説明だよ！おみせ2の説明だよ！おみせ2の説明だよ！おみせ2の説明だよ！おみせ2の説明だよ！おみせ2の説明だよ！おみせ2の説明だよ！おみせ2の説明だよ！おみせ2の説明だよ！",
+                      "thumbnailImageUrl": "https://example.com/bot/images/item2.jpg",
+                      "imageBackgroundColor": "#000000",
+                      "title": "this is menu",
+                      "text": "description",
+                      "defaultAction": {
+                          "type": "uri",
+                          "label": "View detail",
+                          "uri": "http://example.com/page/222"
+                      },
                       "actions": [
-                        {
-                            "type": "uri",
-                            "label": "詳しく見る",
-                            "uri": "http://example.com/page/111"
-                        }
-                    ]
+                          {
+                              "type": "postback",
+                              "label": "Buy",
+                              "data": "action=buy&itemid=222"
+                          },
+                          {
+                              "type": "postback",
+                              "label": "Add to cart",
+                              "data": "action=add&itemid=222"
+                          },
+                          {
+                              "type": "uri",
+                              "label": "View detail",
+                              "uri": "http://example.com/page/222"
+                          }
+                      ]
                     }
                 ],
                 "imageAspectRatio": "rectangle",
