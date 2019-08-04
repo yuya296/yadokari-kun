@@ -76,7 +76,6 @@ module.exports = class SkillSearchShop {
                 break;
             case '軽食':
                 json = require('../db/mogiten/light.json');
-                console.log("create_msg is called: " + json);
                 break;                
         }
 
@@ -92,7 +91,7 @@ module.exports = class SkillSearchShop {
                 });
             });
 
-            console.log(columns);
+            console.log("columns: " + columns);
 
             msg = {
                 type: "carousel",
