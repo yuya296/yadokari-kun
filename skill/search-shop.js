@@ -16,20 +16,21 @@ module.exports = class SkillSearchShop {
                             {type: "message", label: "しょっぱいもの", text: "ホットドッグ"}
                         ]
                     }
+                },
+                parser: async (value, bot, event, context) => {
+                    console.log('called parser: ' + value);
+                    return value;
+                },
+                reaction: async (error, value, bot, event, context) => {
+                    console.log('called reaction' + value);
+                    if (error) return;
+                    bot.queue({
+                        type: "text",
+                        text: `わかった！${value}を探すね！`
+                    });
                 }
-            },
-            parser: async (value, bot, event, context) => {
-                console.log('called parser: ' + value);
-                return value;
-            },
-            reaction: async (error, value, bot, event, context) => {
-                console.log('called reaction' + value);
-                if (error) return;
-                bot.queue({
-                    type: "text",
-                    text: `わかった！${value}を探すね！`
-                });
             }
+                      
         };
     }
 
