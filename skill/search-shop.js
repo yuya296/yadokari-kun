@@ -62,29 +62,68 @@ module.exports = class SkillSearchShop {
 
 
         await bot.reply({
-            type: "carousel",
-            columns: [
-                {
-                    title: "おみせ1", 
-                    text: "おみせ1の紹介だよ！おみせ1の紹介だよ！おみせ1の紹介だよ！おみせ1の紹介だよ！おみせ1の紹介だよ！おみせ1の紹介だよ！おみせ1の紹介だよ！おみせ1の紹介だよ！おみせ1の紹介だよ！おみせ1の紹介だよ！おみせ1の紹介だよ！",
-                    actions: {
-                        type: "uri",
-                        label: "おみせ1の詳細を見る",
-                        uri: "https://google.com/"
+            "type": "template",
+            "altText": "this is a carousel template",
+            "template": {
+                "type": "carousel",
+                "columns": [
+                    {
+                      "title": "this is menu",
+                      "text": "description",
+                      "defaultAction": {
+                          "type": "uri",
+                          "label": "View detail",
+                          "uri": "http://example.com/page/123"
+                      },
+                      "actions": [
+                          {
+                              "type": "postback",
+                              "label": "Buy",
+                              "data": "action=buy&itemid=111"
+                          },
+                          {
+                              "type": "postback",
+                              "label": "Add to cart",
+                              "data": "action=add&itemid=111"
+                          },
+                          {
+                              "type": "uri",
+                              "label": "View detail",
+                              "uri": "http://example.com/page/111"
+                          }
+                      ]
                     },
-                },
-                {
-                    title: "おみせ2", 
-                    text: "おみせ2の紹介だよ！おみせ2の紹介だよ！おみせ2の紹介だよ！おみせ2の紹介だよ！おみせ2の紹介だよ！おみせ2の紹介だよ！おみせ2の紹介だよ！おみせ2の紹介だよ！おみせ2の紹介だよ！おみせ2の紹介だよ！おみせ2の紹介だよ！",
-                    actions: {
-                        type: "uri",
-                        label: "おみせ2の詳細を見る",
-                        uri: "https://google.com/"
-                    },
-                },
-            ],
-
-        });
+                    {
+                      "title": "this is menu",
+                      "text": "description",
+                      "defaultAction": {
+                          "type": "uri",
+                          "label": "View detail",
+                          "uri": "http://example.com/page/222"
+                      },
+                      "actions": [
+                          {
+                              "type": "postback",
+                              "label": "Buy",
+                              "data": "action=buy&itemid=222"
+                          },
+                          {
+                              "type": "postback",
+                              "label": "Add to cart",
+                              "data": "action=add&itemid=222"
+                          },
+                          {
+                              "type": "uri",
+                              "label": "View detail",
+                              "uri": "http://example.com/page/222"
+                          }
+                      ]
+                    }
+                ],
+                "imageAspectRatio": "rectangle",
+                "imageSize": "cover"
+            }
+          });
 
 
     }
