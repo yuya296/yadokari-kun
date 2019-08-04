@@ -61,7 +61,7 @@ module.exports = class SkillSearchShop {
         // });
 
 
-        await bot.reply({
+        await bot.reply([{type: "text", text: `${event.confirmed.genre}が買えるお店を紹介するね！`}, {
             "type": "template",
             "altText": "this is a carousel template",
             "template": {
@@ -93,7 +93,7 @@ module.exports = class SkillSearchShop {
                 "imageAspectRatio": "rectangle",
                 "imageSize": "cover"
             }
-          });
+          }]);
 
 
     }
