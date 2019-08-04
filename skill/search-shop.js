@@ -60,7 +60,7 @@ module.exports = class SkillSearchShop {
         //     text: `またいつでも呼んでね！`
         // });
 
-        await bot.reply({type: "text", text: `${event.confirmed.genre}が買えるお店を紹介するね！`});
+        await bot.reply({type: "text", text: `${context.confirmed.genre}が買えるお店を紹介するね！`});
         await bot.reply({
             "type": "template",
             "altText": "this is a carousel template",
