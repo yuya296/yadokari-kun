@@ -7,7 +7,7 @@ module.exports = class SkillSearchShop {
             genre: {
                 message_to_confirm: {
                     type: "text",
-                    text: "模擬店を検索するね！何が食べたい気分？"
+                    text: "お店を検索するね！何が食べたい気分？"
                     // altText: "何を食べたい気分？",
                     // template: {
                     //     type: "buttons",
