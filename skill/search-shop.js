@@ -1,7 +1,7 @@
 'use strict';
 
 module.exports = class SkillSearchShop {
-    
+
     constructor() {
         this.required_parameter = {
             genre: {
@@ -12,10 +12,10 @@ module.exports = class SkillSearchShop {
                         type: "buttons",
                         text: "今の気分は？",
                         actions: [
-                            {type: "message", label: "軽食", text: "軽食"},
-                            {type: "message", label: "がっつり", text: "ごはん"},
-                            {type: "message", label: "飲み物", text: "飲み物"},
-                            {type: "message", label: "スイーツ", text: "スイーツ"}
+                            { type: "message", label: "軽食", text: "軽食" },
+                            { type: "message", label: "がっつり", text: "ごはん" },
+                            { type: "message", label: "飲み物", text: "飲み物" },
+                            { type: "message", label: "スイーツ", text: "スイーツ" }
                         ]
                     }
                 },
@@ -50,14 +50,61 @@ module.exports = class SkillSearchShop {
                     });
                 }
             }
-                      
+
         };
     }
 
     async finish(bot, event, context) {
-        await bot.reply({
-            type: "text",
-            text: `またいつでも呼んでね！`
-        });
+        // await bot.reply({
+        //     type: "text",
+        //     text: `またいつでも呼んでね！`
+        // });
+
+
+        await bot.reply(this.create_msg(context.confirmed.genre));
+
+
     }
+
+
+    create_msg(genre) {
+        let json;
+        let msg;
+        switch(genre) {
+            case '食事':
+                json = require('../db/mogiten/food.json');
+                break;
+            case '軽食':
+                json = require('../db/mogiten/light.json');
+                break;                
+        }
+
+        if (json) {
+            let columns = [];
+            Object.keys(json).forEach(key => {
+                columns.push({
+                    title: key.name,
+                    text: key.description,
+                    actions: [
+                        {type: "uri", label: "詳細", uri: "https://google.com/"}
+                    ]
+                });
+            });
+
+            msg = {
+                type: "carousel",
+                columns: columns,
+            };
+        } else {
+            msg = {
+                type: "text",
+                text: "お店が見つからないよう！"
+            };
+        }
+
+        return msg;
+        
+    }
+
+    
 };
