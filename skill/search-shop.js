@@ -21,7 +21,10 @@ module.exports = class SkillSearchShop {
                 },
                 parser: async (value, bot, event, context) => {
                     console.log('called parser: ' + value);
-                    return value;
+                    if (["軽食", "ごはん", "飲み物", "スイーツ"].includes(value)) {
+                        return value;
+                    }
+                    return new Error();
                 },
                 reaction: async (error, value, bot, event, context) => {
                     console.log('called reaction' + value);
