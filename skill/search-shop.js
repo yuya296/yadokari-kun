@@ -61,52 +61,34 @@ module.exports = class SkillSearchShop {
         // });
 
 
-        await bot.reply(this.create_msg(context.confirmed.genre));
+        await bot.reply({
+            type: "carousel",
+            columns: [
+                {
+                    title: "おみせ1", 
+                    text: "おみせ1の紹介だよ！おみせ1の紹介だよ！おみせ1の紹介だよ！おみせ1の紹介だよ！おみせ1の紹介だよ！おみせ1の紹介だよ！おみせ1の紹介だよ！おみせ1の紹介だよ！おみせ1の紹介だよ！おみせ1の紹介だよ！おみせ1の紹介だよ！",
+                    actions: {
+                        type: "uri",
+                        label: "おみせ1の詳細を見る",
+                        uri: "https://google.com/"
+                    },
+                },
+                {
+                    title: "おみせ2", 
+                    text: "おみせ2の紹介だよ！おみせ2の紹介だよ！おみせ2の紹介だよ！おみせ2の紹介だよ！おみせ2の紹介だよ！おみせ2の紹介だよ！おみせ2の紹介だよ！おみせ2の紹介だよ！おみせ2の紹介だよ！おみせ2の紹介だよ！おみせ2の紹介だよ！",
+                    actions: {
+                        type: "uri",
+                        label: "おみせ2の詳細を見る",
+                        uri: "https://google.com/"
+                    },
+                },
+            ],
+
+        });
 
 
     }
 
-
-    create_msg(genre) {
-        let json;
-        let msg;
-        switch(genre) {
-            case '食事':
-                json = require('../db/mogiten/food.json');
-                break;
-            case '軽食':
-                json = require('../db/mogiten/light.json');
-                break;                
-        }
-
-        if (json) {
-            let columns = [];
-            Object.keys(json).forEach(key => {
-                columns.push({
-                    title: key.name,
-                    text: key.description,
-                    actions: [
-                        {type: "uri", label: "詳細", uri: "https://google.com/"}
-                    ]
-                });
-            });
-
-            console.log("columns: " + columns);
-
-            msg = {
-                type: "carousel",
-                columns: columns,
-            };
-        } else {
-            msg = {
-                type: "text",
-                text: "お店が見つからないよう！"
-            };
-        }
-
-        return msg;
-        
-    }
 
     
 };
