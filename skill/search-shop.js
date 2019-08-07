@@ -61,43 +61,6 @@ module.exports = class SkillSearchShop {
         // });
 
         await this.reply(bot, context);
-
-        // await bot.reply({type: "text", text: `${context.confirmed.genre}が買えるお店を紹介するね！`});
-        // await bot.reply({
-        //     "type": "template",
-        //     "altText": "this is a carousel template",
-        //     "template": {
-        //         "type": "carousel",
-        //         "columns": [
-        //             {
-        //               "title": "おみせ1",
-        //               "text": "おみせ1の説明だよ！おみせ1の説明だよ！おみせ1の説明だよ！おみせ1の説明だよ！おみせ1の説明だよ！おみせ1の説明だよ！",
-        //               "actions": [
-        //                   {
-        //                       "type": "uri",
-        //                       "label": "詳しく見る",
-        //                       "uri": "http://example.com/page/111"
-        //                   }
-        //               ]
-        //             },
-        //             {
-        //               "title": "おみせ2",
-        //               "text": "おみせ2の説明だよ！おみせ2の説明だよ！おみせ2の説明だよ！おみせ2の説明だよ！おみせ2の説明だよ！おみせ2の説明だよ！",
-        //               "actions": [
-        //                 {
-        //                     "type": "uri",
-        //                     "label": "詳しく見る",
-        //                     "uri": "http://example.com/page/111"
-        //                 }
-        //             ]
-        //             }
-        //         ],
-        //         "imageAspectRatio": "rectangle",
-        //         "imageSize": "cover"
-        //     }
-        //   });
-
-
     }
 
     reply(bot, context) {

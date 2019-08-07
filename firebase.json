@@ -1,0 +1,16 @@
+{
+  "hosting": {
+    "public": "yadokari-kun",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "/timestamp",
+        "destination": "app"
+      }
+    ]
+  }
+}
