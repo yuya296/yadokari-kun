@@ -13,7 +13,7 @@
     "@line/bot-sdk": "^6.8.1",
     "bot-express": "^0.6.8",
     "dialogflow": "^0.10.3",
-    "express": "^4.17.1"
+    "express": "^4.17.3"
   },
   "devDependencies": {
     "eslint": "^6.1.0",
